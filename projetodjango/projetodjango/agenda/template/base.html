@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <title>Agenda de Compromissos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        td {
+            background-color: #f9f9f9;
+        }
+        .add-appointment {
+            margin-top: 20px;
+            text-align: center;
+        }
+        input[type="text"], input[type="datetime-local"] {
+            padding: 8px;
+            margin: 5px;
+            width: 200px;
+        }
+        button {
+            padding: 8px 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Agenda de Compromissos</h1>
+
+    <table id="agendaTable">
+        <thead>
+            <tr>
+                <th>Data e Hora</th>
+                <th>Compromisso</th>
+                <th>Local</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Compromissos serão inseridos aqui -->
+        </tbody>
+    </table>
+
+    <div class="add-appointment">
+        <h2>Adicionar Compromisso</h2>
+        <input type="datetime-local" id="appointmentDate" required>
+        <input type="text" id="appointmentDescription" placeholder="Descrição do compromisso" required>
+        <input type="text" id="appointmentLocation" placeholder="Local do compromisso" required>
+        <button onclick="addAppointment()">Adicionar</button>
+    </div>
+
+    <script>
+        function addAppointment() {
+            const date = document.getElementById('appointmentDate').value;
+            const description = document.getElementById('appointmentDescription').value;
+            const location = document.getElementById('appointmentLocation').value;
+        }
+
